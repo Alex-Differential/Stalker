@@ -1,0 +1,53 @@
+﻿@model IEnumerable<StalkerApplication.Grouping>
+
+@{
+    ViewData["Title"] = "Угрупування";
+}
+
+<h1>Угрупування за екіпіруванням @ViewBag.GrName</h1>
+
+<p>
+    <a asp-action="Create" asp-route-id ="@ViewBag.GrEq">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.GrName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.GrSg)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.GrInfo)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.GrEqNavigation)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.GrName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.GrSg)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.GrInfo)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.GrEqNavigation.EqName)
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.GrId">Edit</a> |
+                <a asp-action="Details" asp-route-id="@item.GrId">Details</a> |
+                <a asp-action="Delete" asp-route-id="@item.GrId">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

@@ -1,0 +1,71 @@
+﻿@model IEnumerable<StalkerApplication.Weapons>
+
+@{
+    ViewData["Title"] = "Озброєння за типом";
+}
+
+    <h1>Озброєння за типом @ViewBag.TwName</h1>
+
+<p>
+    @Html.ActionLink("Додати нову зброю", "Create", new { TwID = @ViewBag.TwID})
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.WpName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.WpWg)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.WpRn)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.WpMg)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.WpTf)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.WpPcNavigation)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.WpTwNavigation)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.WpName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.WpWg)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.WpRn)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.WpMg)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.WpTf)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.WpPcNavigation.PcId)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.WpTwNavigation.TwName)
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.WpId">Edit</a> |
+                <a asp-action="Details" asp-route-id="@item.WpId">Details</a> |
+                <a asp-action="Delete" asp-route-id="@item.WpId">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

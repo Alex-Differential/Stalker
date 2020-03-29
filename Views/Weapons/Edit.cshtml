@@ -1,0 +1,64 @@
+﻿@model StalkerApplication.Weapons
+
+@{
+    ViewData["Title"] = "Edit";
+}
+
+<h1>Edit</h1>
+
+<h4>Weapons</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Edit">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="WpId" />
+            <div class="form-group">
+                <label asp-for="WpName" class="control-label"></label>
+                <input asp-for="WpName" class="form-control" />
+                <span asp-validation-for="WpName" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="WpTw" class="control-label"></label>
+                <select asp-for="WpTw" class="form-control" asp-items="ViewBag.WpTw"></select>
+                <span asp-validation-for="WpTw" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="WpPc" class="control-label"></label>
+                <select asp-for="WpPc" class="form-control" asp-items="ViewBag.WpPc"></select>
+                <span asp-validation-for="WpPc" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="WpWg" class="control-label"></label>
+                <input asp-for="WpWg" class="form-control" />
+                <span asp-validation-for="WpWg" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="WpRn" class="control-label"></label>
+                <input asp-for="WpRn" class="form-control" />
+                <span asp-validation-for="WpRn" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="WpMg" class="control-label"></label>
+                <input asp-for="WpMg" class="form-control" />
+                <span asp-validation-for="WpMg" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="WpTf" class="control-label"></label>
+                <input asp-for="WpTf" class="form-control" />
+                <span asp-validation-for="WpTf" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Save" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

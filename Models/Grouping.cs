@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 
 namespace StalkerApplication
 {
@@ -12,10 +13,14 @@ namespace StalkerApplication
         }
 
         public int GrId { get; set; }
+        [Display(Name = "Угрупування")]
         public string GrName { get; set; }
         public int GrEq { get; set; }
+        [Display(Name = "Екіпірування угрупування")]
         public int GrSg { get; set; }
+        [Display(Name = "Серія ігор")]
         public string GrInfo { get; set; }
+        [Display(Name = "Інформація")]
 
         public virtual Equipment GrEqNavigation { get; set; }
         public virtual ICollection<GroupSg> GroupSg { get; set; }

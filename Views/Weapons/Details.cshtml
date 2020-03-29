@@ -1,0 +1,60 @@
+﻿@model StalkerApplication.Weapons
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h1>Details</h1>
+
+<div>
+    <h4>Weapons</h4>
+    <hr />
+    <dl class="row">
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.WpName)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.WpName)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.WpWg)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.WpWg)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.WpRn)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.WpRn)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.WpMg)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.WpMg)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.WpTf)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.WpTf)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.WpPcNavigation)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.WpPcNavigation.PcId)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.WpTwNavigation)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.WpTwNavigation.TwName)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-action="Edit" asp-route-id="@Model.WpId">Edit</a> |
+    <a asp-action="Index">Back to List</a>
+</div>

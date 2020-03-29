@@ -25,7 +25,8 @@ namespace StalkerApplication.Controllers
 
         public IActionResult Privacy()
         {
-            return View();
+            ViewData["Message"] = "Hello, Koval!";
+            return View("Hello, Koval!");
         }
 
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]

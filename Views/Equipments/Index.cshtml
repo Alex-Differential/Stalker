@@ -1,0 +1,41 @@
+﻿@model IEnumerable<StalkerApplication.Equipment>
+
+@{
+    ViewData["Title"] = "Екіпірування";
+}
+
+<h1>Костюми за типом @ViewBag.Name</h1>
+
+<p>
+    @Html.ActionLink("Додати новий костюм", "Create", new { teid = @ViewBag.EqTe})
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.EqName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.EqTeNavigation)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.EqName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.EqTeNavigation.TeName)
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.EqId">Edit</a> |
+                <a asp-action="Details" asp-route-id="@item.EqId">Details</a> |
+                <a asp-action="Delete" asp-route-id="@item.EqId">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
